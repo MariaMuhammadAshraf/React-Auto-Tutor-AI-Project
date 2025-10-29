@@ -1,0 +1,480 @@
+/* 🌿 Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #00224D, #5D0E41, #A0153E, #FF204E);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+/* 🎨 Animated Gradient Keyframes */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.1;
+  animation: moveBubbles 25s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBubbles {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* 🌟 Main Container */
+/* .app-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 750px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+  
+} */
+
+/* 🌟 Main Container */
+.app-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 750px;
+  background: linear-gradient(-135deg, #00224D, #5D0E41,#0000, #A0153E,#00224D, #5D0E41,#0000);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite, fadeIn 0.8s ease;
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ✨ Fade In Entrance */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌈 Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* 🧠 Header */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  background: linear-gradient(45deg,
+    #e992d7,
+    #a0b3f0,
+    #f1b0c1,
+    #f1f1f1,
+    #e992d7,
+    #a0b3f0
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Poppins", "Montserrat", "Segoe UI", sans-serif;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  animation: glowShift 6s ease infinite;
+}
+
+@keyframes glowShift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(40deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+header p {
+  color: #eee;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* 🔍 Input Section */
+.input-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #5D0E41;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffffdd;
+  color: #00224D;
+}
+
+input[type="text"]:focus {
+  border-color: #A0153E;
+  box-shadow: 0 0 8px rgba(160, 21, 62, 0.5);
+}
+
+/* 🚀 Buttons */
+button {
+  background: linear-gradient(45deg, #A0153E, #FF204E);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 3px 12px rgba(255, 32, 78, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #5D0E41, #A0153E);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 32, 78, 0.6);
+}
+
+/* 🧩 Section Cards */
+.lesson-section,
+.quiz-section,
+.summary-section {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* ✅ White Box (for "Biology" or similar) */
+.white-box {
+  background: #fff;
+  color: #00224D;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 🧠 Quiz Styling */
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 8px 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-btn:hover {
+  background: linear-gradient(90deg, #A0153E, #5D0E41);
+  transform: scale(1.02);
+}
+
+.option-btn.selected {
+  background: linear-gradient(90deg, #FF204E, #A0153E);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 32, 78, 0.5);
+  animation: pulse 0.6s ease;
+}
+
+/* 🟢 Submit Button */
+.submit-btn {
+  background: linear-gradient(45deg, #5D0E41, #00224D);
+  margin-top: 12px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #00224D, #5D0E41);
+}
+.option-btn.correct {
+  background: linear-gradient(90deg, #00bfa6, #007a58);
+  color: #fff;
+}
+.option-btn.wrong {
+  background: linear-gradient(90deg, #6b0f1a, #b91372);
+  color: #fff;
+}
+.voice-controls button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.voice-controls button:hover {
+  background: #444;
+}
+
+.voice-controls button:nth-child(3) {
+  background-color: #ff4d4d;
+}
+
+.voice-controls button:nth-child(3):hover {
+  background: linear-gradient(45deg, #5D0E41, #A0153E);
+}
+
+
+
+/* 🏆 Score */
+.score {
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+/* 📜 Footer */
+footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* 🌍 RESPONSIVENESS */
+
+/* Tablet View (<=1024px) */
+@media (max-width: 1024px) {
+  .app-container {
+    padding: 25px;
+    width: 85%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+}
+
+/* Small Tablet / Large Mobile (<=768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+   .voice-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .voice-controls button {
+    min-width: 130px;
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .app-container {
+    width: 90%;
+    padding: 22px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+    max-width: 350px;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .white-box {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* 📱 Mobile View (<=480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+  }
+   .voice-controls {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .voice-controls button {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .app-container {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 12px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+    max-width: 350px;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .lesson-section,
+  .quiz-section,
+  .summary-section {
+    padding: 14px;
+  }
+
+  .white-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    margin: 0 auto 10px;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+}
+.voice-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.voice-controls button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-width: 140px;
+}
+
+.voice-controls button:hover {
+  background: #444;
+}
+
+/* 🔴 Red style for stop or alert-like buttons */
+.voice-controls button:nth-child(4) {
+  background-color: #ff4d4d;
+}
+
+.voice-controls button:nth-child(4):hover {
+  background: linear-gradient(45deg, #5D0E41, #A0153E);
+  
+}
