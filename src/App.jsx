@@ -1,4 +1,4 @@
-// REACT_APP_GROQ_API_KEY=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 .env file api key here
+ 
 import React, { useState, useEffect, useRef } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
